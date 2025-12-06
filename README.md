@@ -1,19 +1,40 @@
-# 🚗 AI Car Recommendation System
+# 🚗 MotorMony - AI Car Recommendation System
 
-A modern, AI-powered car recommendation system with a beautiful web interface. Find your perfect car based on natural language queries!
+A commercial-grade AI-powered car recommendation system that helps users find their perfect vehicle using natural language queries. Experience intelligent recommendations with CarPilot AI, premium UI/UX, and transparent scoring.
 
-![Car Finder AI](https://img.shields.io/badge/Status-Production%20Ready-success)
-![Python](https://img.shields.io/badge/Python-3.8+-blue)
-![Flask](https://img.shields.io/badge/Flask-2.0+-green)
+![MotorMony](https://img.shields.io/badge/Status-Production%20Ready-success)
+![Python](https://img.shields.io/badge/Python-3.9+-blue)
+![Flask](https://img.shields.io/badge/Flask-3.0+-green)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/sathyaseelan2006/MotorMony)
+
+## 🌐 Live Demo
+🔗 **[Visit MotorMony Live](https://your-app.vercel.app)**
 
 ## ✨ Features
 
-- 🤖 **AI-Powered Recommendations**: Natural language query processing
-- 🎨 **Modern UI**: Dark theme with glassmorphism and smooth animations
-- 📊 **Data Visualization**: Interactive charts for comparing cars
-- 🔍 **Smart Filtering**: Sort by score, price, or name
-- 📱 **Responsive Design**: Works on all devices
-- ⚡ **Fast & Efficient**: Optimized performance
+### 🎯 Smart Recommendations
+- **AI-Powered Search**: Natural language processing understands queries like "family car under 20 lakhs"
+- **Intent Detection**: Automatically identifies user intent (family, performance, budget, EV, luxury)
+- **Multi-Factor Scoring**: Analyzes price, power, mileage, safety, and resale value
+
+### 🏆 CarPilot AI Suggestion
+- Intelligent top pick with detailed reasoning
+- Intent-based recommendations
+- Transparent scoring breakdown
+
+### 🔍 Advanced Features
+- **Year Filtering**: Filter cars by year (2010-2015)
+- **Smart Sorting**: Sort by score, price, mileage, power, safety, or year
+- **Comparison Panel**: Compare up to 4 cars side-by-side
+- **Pagination**: Load more results (20 cars per page)
+- **Score Explanation**: Transparent scoring with detailed breakdowns
+
+### 🎨 Premium UI/UX
+- Modern glassmorphism design with purple gradient theme
+- Animated timeline for "How It Works" section
+- Responsive mobile-first design
+- Smooth animations and micro-interactions
+- 526+ cars across 40+ brands
 
 ## 🚀 Quick Start
 
