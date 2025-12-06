@@ -1,5 +1,11 @@
 {
+  "functions": {
+    "api/index.py": {
+      "maxDuration": 30
+    }
+  },
   "rewrites": [
+    { "source": "/recommend", "destination": "/api/index" },
     { "source": "/(.*)", "destination": "/api/index" }
   ]
 }

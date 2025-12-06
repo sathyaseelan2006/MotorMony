@@ -1,0 +1,21 @@
+# Exclude large raw datasets from Vercel deployment
+car_prices.csv
+car_dataset.csv
+
+# Exclude test files
+test_*.py
+test_*.http
+check_years.py
+system_status.html
+test_connection.html
+
+# Exclude backup files
+*.backup
+*.old
+
+# Exclude public directory
+public/
+
+# Exclude pycache
+__pycache__/
+*.pyc
