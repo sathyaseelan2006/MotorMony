@@ -1,0 +1,7 @@
+POST http://127.0.0.1:5000/recommend
+Content-Type: application/json
+
+{
+  "query": "Family friendly car under 12 lakhs with petrol engine",
+  "top_k": 5
+}

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MotorMony | AI-Powered Car Recommendations</title>
+  <meta name="description" content="Find Your Automotive Soul Partner with MotorMony - AI-Powered Car Recommendations Tailored Just for You!">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/static/css/style.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚗</text></svg>">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <img src="/static/images/logo.png" alt="MotorMony" class="logo-image" />
+        <span class="logo-text">MotorMony</span>
+      </a>
+      
+      <div class="nav-menu">
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#how-it-works" class="nav-link">How It Works</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
+        <a href="#" class="nav-link">About</a>
+      </div>
+      
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+  
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <img src="/static/images/logo.png" alt="MotorMony" class="logo-image-mobile" />
+      <span class="logo-text">MotorMony</span>
+      <button onclick="toggleMobileMenu()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="mobile-menu-content">
+      <a href="#features" class="mobile-nav-link">Features</a>
+      <a href="#how-it-works" class="mobile-nav-link">How It Works</a>
+      <a href="#pricing" class="mobile-nav-link">Pricing</a>
+      <a href="#" class="mobile-nav-link">About</a>
+      <button class="btn-cta-nav" style="width: 100%; justify-content: center;">
+        Get Started <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-container">
+        <div class="hero-badge">
+          <i class="fas fa-sparkles"></i>
+          <span>AI-Powered Car Discovery</span>
+        </div>
+        
+        <h1 class="hero-title">
+          Find Your Dream Car<br/>
+          <span class="gradient-text">With AI Intelligence</span>
+        </h1>
+        
+        <p class="hero-subtitle">
+          Find Your Automotive Soul Partner
+        </p>
+        
+        <!-- Search Section -->
+        <form id="searchForm" class="search-section">
+          <div class="search-container">
+            <div class="search-icon">
+              <i class="fas fa-search"></i>
+            </div>
+            <textarea 
+              id="queryInput" 
+              class="search-input" 
+              rows="1"
+              placeholder="Describe your dream car... (e.g., 'Family-friendly SUV under 15 lakhs')"></textarea>
+            <button type="submit" class="search-btn">
+              <span>Find Cars</span>
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+          
+          <div class="char-counter">
+            <span id="charCount">0</span>/500 characters
+          </div>
+        </form>
+        
+        <!-- Quick Search Tags -->
+        <div class="quick-tags">
+          <span class="quick-tags-label">Popular searches:</span>
+          <button type="button" class="quick-tag" onclick="fillQuery('Safe family car with 7 seats under 12 lakhs')">
+            <i class="fas fa-users"></i> Family Car
+          </button>
+          <button type="button" class="quick-tag" onclick="fillQuery('High performance sports car with powerful engine')">
+            <i class="fas fa-bolt"></i> Sports Car
+          </button>
+          <button type="button" class="quick-tag" onclick="fillQuery('Budget friendly car with excellent mileage under 8 lakhs')">
+            <i class="fas fa-wallet"></i> Budget Car
+          </button>
+          <button type="button" class="quick-tag" onclick="fillQuery('Electric vehicle with long range and fast charging')">
+            <i class="fas fa-leaf"></i> Electric
+          </button>
+          <button type="button" class="quick-tag" onclick="fillQuery('Luxury sedan with premium features and comfort')">
+            <i class="fas fa-crown"></i> Luxury
+          </button>
+        </div>
+        
+        <!-- Trust Indicators -->
+        <div class="trust-indicators">
+          <div class="trust-item">
+            <i class="fas fa-car"></i>
+            <span>500+</span>
+          </div>
+
+          <div class="trust-item">
+            <i class="fas fa-star"></i>
+            <span>4.8/5 Rating</span>
+          </div>
+          <div class="trust-item">
+            <i class="fas fa-shield-alt"></i>
+            <span>100% Verified</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+      <div class="features-container">
+        <div class="section-header">
+          <h2 class="section-title">Why Choose <span class="gradient-text">MotorMony</span>?</h2>
+          <p class="section-subtitle">Powered by advanced AI to find your perfect car match</p>
+        </div>
+        
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h3 class="feature-title">AI-Powered Matching</h3>
+            <p class="feature-description">Our intelligent algorithm understands your needs and finds the perfect car for you.</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3 class="feature-title">Smart Comparisons</h3>
+            <p class="feature-description">Compare cars side-by-side with detailed specs, pricing, and performance metrics.</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <h3 class="feature-title">Instant Results</h3>
+            <p class="feature-description">Get personalized recommendations in seconds, not hours of manual research.</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-shield-check"></i>
+            </div>
+            <h3 class="feature-title">Verified Data</h3>
+            <p class="feature-description">All car information is verified and updated regularly for accuracy.</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-rupee-sign"></i>
+            </div>
+            <h3 class="feature-title">Best Price Guarantee</h3>
+            <p class="feature-description">Find the best deals with real-time pricing from authorized dealers.</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3 class="feature-title">Mobile Friendly</h3>
+            <p class="feature-description">Search for cars anywhere, anytime with our responsive design.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Results Section -->
+    <section id="results" class="results-section">
+      <!-- Dynamic Content Loads Here -->
+      <div class="empty-state">
+        <div class="empty-icon">
+          <i class="fas fa-search"></i>
+        </div>
+        <h3>Start Your Car Search</h3>
+        <p>Enter your preferences above to see personalized recommendations</p>
+      </div>
+    </section>
+
+    <!-- Charts Section -->
+    <section id="chartsSection" class="charts-section hidden">
+      <div class="section-header">
+        <h2 class="section-title">Performance <span class="gradient-text">Analysis</span></h2>
+        <p class="section-subtitle">Compare your top matches at a glance</p>
+      </div>
+
+      <div class="charts-grid">
+        <div class="chart-card">
+          <h3 class="chart-title"><i class="fas fa-radar"></i> Multi-Factor Analysis</h3>
+          <canvas id="radarChart"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3 class="chart-title"><i class="fas fa-chart-bar"></i> Value Comparison</h3>
+          <canvas id="barChart"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section id="articlesSection" class="articles-section hidden">
+      <!-- Articles load here -->
+    </section>
+    
+    <!-- How It Works -->
+    <section id="how-it-works" class="how-it-works-section">
+      <div class="section-container">
+        <div class="section-header">
+          <h2 class="section-title">How It <span class="gradient-text">Works</span></h2>
+          <p class="section-subtitle">Your journey to finding the perfect car in 3 simple steps</p>
+        </div>
+        
+        <div class="timeline-container">
+          <div class="timeline-line"></div>
+          
+          <div class="timeline-step" data-step="1">
+            <div class="timeline-dot">
+              <div class="timeline-dot-inner">
+                <i class="fas fa-edit"></i>
+              </div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-badge">Step 01</div>
+              <h3 class="timeline-title">Describe Your Needs</h3>
+              <p class="timeline-description">Simply type what you're looking for in natural language. Whether it's "family car under 20 lakhs" or "sporty sedan with good mileage" - our AI understands your requirements.</p>
+              <div class="timeline-features">
+                <span class="timeline-tag"><i class="fas fa-check-circle"></i> Budget Range</span>
+                <span class="timeline-tag"><i class="fas fa-check-circle"></i> Features</span>
+                <span class="timeline-tag"><i class="fas fa-check-circle"></i> Preferences</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="timeline-step" data-step="2">
+            <div class="timeline-dot">
+              <div class="timeline-dot-inner">
+                <i class="fas fa-brain"></i>
+              </div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-badge">Step 02</div>
+              <h3 class="timeline-title">AI-Powered Analysis</h3>
+              <p class="timeline-description">Our intelligent recommendation engine analyzes 526+ vehicles across multiple parameters including price, performance, safety, mileage, and resale value to find your perfect matches.</p>
+              <div class="timeline-features">
+                <span class="timeline-tag"><i class="fas fa-check-circle"></i> Smart Scoring</span>
+                <span class="timeline-tag"><i class="fas fa-check-circle"></i> Intent Detection</span>
+                <span class="timeline-tag"><i class="fas fa-check-circle"></i> Multi-Factor Analysis</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="timeline-step" data-step="3">
+            <div class="timeline-dot">
+              <div class="timeline-dot-inner">
+                <i class="fas fa-trophy"></i>
+              </div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-badge">Step 03</div>
+              <h3 class="timeline-title">Get Smart Results</h3>
+              <p class="timeline-description">Receive personalized recommendations ranked by relevance, complete with CarPilot AI's top pick. Compare detailed specs, view transparent scoring, and make an informed decision.</p>
+              <div class="timeline-features">
+                <span class="timeline-tag"><i class="fas fa-check-circle"></i> CarPilot Suggestion</span>
+                <span class="timeline-tag"><i class="fas fa-check-circle"></i> Side-by-Side Compare</span>
+                <span class="timeline-tag"><i class="fas fa-check-circle"></i> Score Breakdown</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Comparison Panel -->
+  <div id="comparisonPanel" class="comparison-panel">
+    <div class="comparison-header">
+      <h3><i class="fas fa-balance-scale"></i> Compare Cars</h3>
+      <button class="comparison-close" onclick="closeComparison()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="comparison-grid">
+      <!-- Dynamic comparison cards load here -->
+    </div>
+  </div>
+
+
+  
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTop" class="scroll-to-top" onclick="scrollToTop()">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+  
+  <!-- Car Details Modal -->
+  <div id="carDetailsModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeCarDetails()">
+        <i class="fas fa-times"></i>
+      </button>
+      <div id="carDetailsContent">
+        <!-- Dynamic content will be loaded here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- App Logic -->
+  <script src="/static/js/app.js"></script>
+</body>
+
+</html>

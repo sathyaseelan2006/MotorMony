@@ -1,0 +1,269 @@
+/* ==================== MOTORMONY THEME - CSS VARIABLES ==================== */
+:root {
+  /* Palette: Romance Meets Luxury */
+  --color-bg-primary: #0f0a0c;
+  /* Very dark warm black */
+  --color-bg-secondary: #1a1014;
+  /* Dark plum/brown tint */
+  --color-bg-card: rgba(30, 20, 25, 0.95);
+  --color-bg-card-hover: rgba(45, 25, 35, 0.95);
+
+  /* Accents */
+  --color-accent-rose: #B76E79;
+  /* Deep Rose Gold */
+  --color-accent-blush: #FFB7C5;
+  /* Soft Pink/Blush */
+  --color-accent-coral: #FF6B9D;
+  /* Vibrant Coral */
+  --color-accent-gold: #D4AF37;
+  /* Champagne Gold */
+  --color-accent-platinum: #E5E4E2;
+
+  /* Functional Colors */
+  --color-success: #00ff88;
+  --color-warning: #ffaa00;
+  --color-danger: #ff3366;
+
+  /* Text */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #ffe5ec;
+  /* Warm white */
+  --color-text-muted: #b08d96;
+  /* Muted rose grey */
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--color-accent-rose) 0%, var(--color-accent-coral) 100%);
+  --gradient-gold: linear-gradient(135deg, #D4AF37 0%, #F4C430 50%, #D4AF37 100%);
+  --gradient-dark: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+  --gradient-card: linear-gradient(135deg, rgba(183, 110, 121, 0.08) 0%, rgba(255, 107, 157, 0.08) 100%);
+
+  /* Spacing & Layout */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+
+  /* Typography */
+  --font-primary: 'Inter', sans-serif;
+  --font-display: 'Playfair Display', serif;
+
+  /* Effects */
+  --shadow-glow: 0 0 20px rgba(183, 110, 121, 0.3);
+  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+
+  --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==================== RESET & BASE ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Animated Background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at 15% 50%, rgba(183, 110, 121, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 85% 30%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ==================== TYPOGRAPHY ==================== */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-text-primary);
+}
+
+.text-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gold {
+  color: var(--color-accent-gold);
+}
+
+/* ==================== HEADER ==================== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(15, 10, 12, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(183, 110, 121, 0.2);
+  padding: var(--spacing-md) 0;
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+.logo-icon {
+  font-size: 1.8rem;
+}
+
+/* ==================== HERO / MATCH FINDER ==================== */
+.hero-section {
+  padding: var(--spacing-2xl) var(--spacing-lg);
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.search-card {
+  background: var(--color-bg-card);
+  border: 1px solid rgba(183, 110, 121, 0.3);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-2xl);
+  box-shadow: var(--shadow-card), var(--shadow-glow);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative corner accents */
+.search-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle at top right, rgba(255, 107, 157, 0.2), transparent 70%);
+  pointer-events: none;
+}
+
+.search-input-wrapper {
+  position: relative;
+  margin: var(--spacing-xl) 0;
+}
+
+.search-input {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(183, 110, 121, 0.3);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  color: var(--color-text-primary);
+  font-size: 1.1rem;
+  font-family: var(--font-primary);
+  transition: var(--transition-base);
+  resize: none;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--color-accent-rose);
+  box-shadow: 0 0 15px rgba(183, 110, 121, 0.2);
+}
+
+.btn-primary {
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+  padding: var(--spacing-md) var(--spacing-2xl);
+  border-radius: var(--radius-full);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-base);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  box-shadow: 0 4px 15px rgba(255, 107, 157, 0.4);
+}
+
+margin: 0 auto;
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
+}
+
+.chart-container {
+  background: var(--color-bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+}
+
+/* ==================== UTILITIES ==================== */
+.hidden {
+  display: none !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Loading Spinner */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-2xl);
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(183, 110, 121, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--color-accent-rose);
+  animation: spin 1s linear infinite;
+  margin-bottom: var(--spacing-md);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
