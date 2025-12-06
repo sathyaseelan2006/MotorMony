@@ -176,9 +176,6 @@ Contributions are welcome! Areas for improvement:
 
 This project is open source and available for educational purposes.
 
-## 👨‍💻 Author
-
-Built with ❤️ using Flask, Python, and modern web technologies.
 
 ---
 
