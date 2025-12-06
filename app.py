@@ -1,9 +1,9 @@
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify, send_from_directory, send_file
 from flask_cors import CORS
 from recommendation_system import recommend
 import os
 
-app = Flask(__name__, static_folder='static')
+app = Flask(__name__, static_folder='static', static_url_path='/static')
 CORS(app)  # Enable CORS for all routes
 
 @app.route("/recommend", methods=["POST"])
@@ -29,17 +29,20 @@ def recommend_api():
         return jsonify({"error": str(e)}), 500
 
 
-@app.route("/", methods=["GET"])
+@app.route("/")
 def home():
-    return send_from_directory('.', 'index.html')
+    try:
+        return send_file('index.html')
+    except:
+        return send_from_directory('.', 'index.html')
 
 
-@app.route("/static/<path:path>")
-def send_static(path):
-    return send_from_directory('static', path)
+@app.route("/static/<path:filename>")
+def serve_static(filename):
+    return send_from_directory('static', filename)
 
 
-# Vercel serverless function entry point
+# Export for Vercel
 app = app
 
 if __name__ == "__main__":
