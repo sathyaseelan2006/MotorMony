@@ -12,6 +12,8 @@ test_connection.html
 # Exclude backup files
 *.backup
 *.old
+static/css/*.backup
+static/css/*.old
 
 # Exclude public directory
 public/
@@ -19,3 +21,21 @@ public/
 # Exclude pycache
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+
+# Exclude git files
+.git/
+.gitignore
+
+# Exclude readme and docs
+README.md
+DATASET_ANALYSIS.md
+*.md
+
+# Exclude logo from root
+logo.png
+
+# Exclude normalization scripts (not needed in production)
+normalize_dataset.py
+normalize_car_prices.py
