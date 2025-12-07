@@ -122,9 +122,14 @@ function initializeScrollEffects() {
 }
 
 // ==================== API FUNCTIONS ====================
+// Dynamic API URL - works both locally and in production
+const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+  ? 'http://127.0.0.1:5000' 
+  : window.location.origin;
+
 async function fetchRecommendations(query, topK = 10) {
   try {
-    const response = await fetch('http://127.0.0.1:5000/recommend', {
+    const response = await fetch(`${API_BASE_URL}/recommend`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -296,7 +301,7 @@ function showError(message) {
       <h3>Oops! Something went wrong</h3>
       <p style="color: var(--color-text-secondary); margin-bottom: 1rem;">${message}</p>
       <p style="color: var(--color-text-muted); font-size: 0.875rem;">
-        Make sure the Flask backend is running on http://127.0.0.1:5000
+        Make sure the Flask backend is running
       </p>
     </div>
   `;
